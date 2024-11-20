@@ -1,6 +1,7 @@
 // src/App.js
 import React from 'react';
 import Basket from './Frontend\\Basket';
+import './Frontend\\Styles.css';
 
 function App() {
   return (
