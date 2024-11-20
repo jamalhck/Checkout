@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 function Basket() {
   const [count, setCount] = useState(0);
 
+
   return (
     <div>
         <h2>Basket Count: {count}</h2>
