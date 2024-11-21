@@ -11,7 +11,7 @@ click on button B, the count is added to an array
 
 */
 
-function Calculator(itemCount) {
+function CalculatorB(itemCount) {
 
     const PAIR_PRICE = 45;
     const SINGLE_PRICE = 30;
@@ -34,4 +34,32 @@ function Calculator(itemCount) {
     return TOTAL_PRICE;
 }
 
-export default Calculator;
+function CalculatorA(itemCount) {
+
+    const THREE_PRICE = 130;
+    const SINGLE_PRICE = 50;
+    let TOTAL_PRICE = 0;
+
+    if (itemCount === 1) {
+        return SINGLE_PRICE;
+    }
+    else if (itemCount === 2) { //added because 2 items are still less than 3, therefore it doesn't sum 50 + 50.
+        return SINGLE_PRICE * 2;
+    }
+    else if (itemCount > 2) {
+        // Calculate number of pairs and remainder
+        const three = Math.floor(itemCount / 3);
+        const remainder = itemCount % 3;
+
+        // Calculate total price
+        const threePrice = three * THREE_PRICE;
+        const remainderPrice = remainder * SINGLE_PRICE;
+
+        TOTAL_PRICE = threePrice + remainderPrice;
+    }
+    return TOTAL_PRICE;
+}
+
+// future: specialprice(), add a menu in the checkout system that allows for the special prices to be added, and modified for the different items.
+
+export { CalculatorB, CalculatorA };
