@@ -77,13 +77,16 @@ function Basket() {
 
             <h3 className={styles.itemsName}>Basket Items:</h3>
             <div className={styles.productsList}>
-                <ul>
-                    {Object.entries(basketItems).map(([product, count]) => (
-                        <li  key={product}>
-                            <h4 >{product} x{count}</h4>
-                        </li>
-                    ))}
-                </ul>
+                <h3 className={styles.quantity}>Quantity </h3>
+                <h3 className={styles.productList}>
+                    <ul>
+                        {Object.entries(basketItems).map(([product, count]) => (
+                            <li key={product}>
+                                <h4 >{product}__________________________x{count}</h4>
+                            </li>
+                        ))}
+                    </ul>
+                </h3>
             </div>
             <div className={styles.prices}>
                 <ul>
