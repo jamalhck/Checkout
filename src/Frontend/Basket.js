@@ -20,6 +20,9 @@ function Basket() {
         const nCount = itemCountA + 1;
         setItemCountA(nCount);
         setTotalA(CalculatorA(nCount));
+        // Put 'Product A' in an useState object array, and the individual price as well.
+        // Retrieve the 'Product A' and put it in placeholderA
+        updateBasket('Product A');
     };
     const [itemCountC, setItemCountC] = useState(0);
     const [totalC, setTotalC] = useState(0);
@@ -35,26 +38,48 @@ function Basket() {
         setItemCountD(nCount);
         setTotalD(Sum(nCount, products.ProductD));
     };
+    // Constant to add product names to the basketItems array #thinkinginreact
+    const [basketItems, setBasketItems] = useState({});
+    const updateBasket = (productName) => {
+        setBasketItems((prevItems) => ({
+            ...prevItems,
+            [productName]: (prevItems[productName] || 0) + 1,
+        }));
+    };
 
     let BasketTotal = totalB + totalA + totalC + totalD;
 
     return (
-        <div className={styles.total}><h2 >Total Price: {BasketTotal} pence</h2>
-        <div className={styles.ScanProducts}> 
-                <h3>Click to scan a product below:</h3>
-                <button onClick={handleAddItemA}>
-                    Product A ({products.ProductA} pence)
-                </button>
-                <button onClick={handleAddItemB}>
-                    Product B ({products.ProductB} pence)
-                </button>
-                <button onClick={handleAddItemC}>
-                    Product C ({products.ProductC} pence)
-                </button>
-                <button onClick={handleAddItemD}>
-                    Product D ({products.ProductD} pence)
-                </button>
+        <div>
+            <div className={styles.total}><h2 >Total Price: {BasketTotal} pence</h2>
+                <div className={styles.ScanProducts}>
+                    <h3>Click to scan a product below:</h3>
+                    <button onClick={handleAddItemA}>
+                        Product A ({products.ProductA} pence)
+                    </button>
+                    <button onClick={handleAddItemB}>
+                        Product B ({products.ProductB} pence)
+                    </button>
+                    <button onClick={handleAddItemC}>
+                        Product C ({products.ProductC} pence)
+                    </button>
+                    <button onClick={handleAddItemD}>
+                        Product D ({products.ProductD} pence)
+                    </button>
+                </div>
             </div>
+
+{/* Calling the Object.entries() function to convert objects to arrays to then pass them to the map() function
+ to loop through the entire array created to capture 'product' and 'count' */}
+ 
+            <h3>Basket Items:</h3>
+                <ul>
+                    {Object.entries(basketItems).map(([product, count]) => (
+                        <li key={product}>
+                            {product} x{count}
+                        </li>
+                    ))}
+                </ul>
         </div>
     );
 }
