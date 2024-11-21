@@ -13,6 +13,7 @@ function Basket() {
         const nCount = itemCountB + 1; // Increment the item count for Product B
         setItemCountB(nCount); // Update the item count state
         setTotalB(CalculatorB(nCount)); // Calculate and update the total for Product B
+        updateBasket('Product B')
     };
     const [itemCountA, setItemCountA] = useState(0);
     const [totalA, setTotalA] = useState(0);
@@ -30,6 +31,7 @@ function Basket() {
         const nCount = itemCountC + 1;
         setItemCountC(nCount);
         setTotalC(Sum(nCount, products.ProductC));
+        updateBasket('Product C')
     };
     const [itemCountD, setItemCountD] = useState(0);
     const [totalD, setTotalD] = useState(0);
@@ -37,6 +39,7 @@ function Basket() {
         const nCount = itemCountD + 1;
         setItemCountD(nCount);
         setTotalD(Sum(nCount, products.ProductD));
+        updateBasket('Product D')
     };
     // Constant to add product names to the basketItems array #thinkinginreact
     const [basketItems, setBasketItems] = useState({});
@@ -71,7 +74,7 @@ function Basket() {
 
 {/* Calling the Object.entries() function to convert objects to arrays to then pass them to the map() function
  to loop through the entire array created to capture 'product' and 'count' */}
- 
+
             <h3>Basket Items:</h3>
                 <ul>
                     {Object.entries(basketItems).map(([product, count]) => (
