@@ -9,14 +9,21 @@ function Basket() {
 
     const [itemCountB, setItemCountB] = useState(0);
     const [totalB, setTotalB] = useState(0);
+    const [itemCountA, setItemCountA] = useState(0);
+    const [totalA, setTotalA] = useState(0);
+    const [itemCountC, setItemCountC] = useState(0);
+    const [totalC, setTotalC] = useState(0);
+    const [itemCountD, setItemCountD] = useState(0);
+    const [totalD, setTotalD] = useState(0);
+    const [basketItems, setBasketItems] = useState({});
+
     const handleAddItemB = () => {
         const nCount = itemCountB + 1; // Increment the item count for Product B
         setItemCountB(nCount); // Update the item count state
         setTotalB(CalculatorB(nCount)); // Calculate and update the total for Product B
         updateBasket('Product B')
     };
-    const [itemCountA, setItemCountA] = useState(0);
-    const [totalA, setTotalA] = useState(0);
+    
     const handleAddItemA = () => {
         const nCount = itemCountA + 1;
         setItemCountA(nCount);
@@ -25,16 +32,14 @@ function Basket() {
         // Retrieve the 'Product A' and put it in placeholderA
         updateBasket('Product A');
     };
-    const [itemCountC, setItemCountC] = useState(0);
-    const [totalC, setTotalC] = useState(0);
+    
     const handleAddItemC = () => {
         const nCount = itemCountC + 1;
         setItemCountC(nCount);
         setTotalC(Sum(nCount, products.ProductC));
         updateBasket('Product C')
     };
-    const [itemCountD, setItemCountD] = useState(0);
-    const [totalD, setTotalD] = useState(0);
+    
     const handleAddItemD = () => {
         const nCount = itemCountD + 1;
         setItemCountD(nCount);
@@ -42,7 +47,6 @@ function Basket() {
         updateBasket('Product D')
     };
     // Constant to add product names to the basketItems array #thinkinginreact
-    const [basketItems, setBasketItems] = useState({});
     const updateBasket = (productName) => {
         setBasketItems((prevItems) => ({
             ...prevItems,
