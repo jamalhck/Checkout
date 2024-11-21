@@ -1,3 +1,4 @@
+import products from '../Frontend/Items';
 /*
 Pseudo code from which the below function was written:
 
@@ -13,8 +14,8 @@ click on button B, the count is added to an array
 
 function CalculatorB(itemCount) {
 
-    const PAIR_PRICE = 45;
-    const SINGLE_PRICE = 30;
+    const PAIR_PRICE = products.SpecialB;
+    const SINGLE_PRICE = products.ProductB;
     let TOTAL_PRICE = 0;
 
     if (itemCount === 1) {
@@ -36,8 +37,8 @@ function CalculatorB(itemCount) {
 
 function CalculatorA(itemCount) {
 
-    const THREE_PRICE = 130;
-    const SINGLE_PRICE = 50;
+    const THREE_PRICE = products.SpecialA;
+    const SINGLE_PRICE = products.ProductA;
     let TOTAL_PRICE = 0;
 
     if (itemCount === 1) {
@@ -60,6 +61,28 @@ function CalculatorA(itemCount) {
     return TOTAL_PRICE;
 }
 
+function Sum(itemCount) {
+
+    const SINGLE_PRICE = products.ProductC;
+    if (itemCount === 1){
+        return SINGLE_PRICE;
+    }
+    else{
+        return SINGLE_PRICE * itemCount;
+    }
+}
+
+function SumD(itemCount) {
+
+    const SINGLE_PRICE = products.ProductD;
+    if (itemCount === 1){
+        return SINGLE_PRICE;
+    }
+    else{
+        return SINGLE_PRICE * itemCount;
+    }
+}
+
 // future: specialprice(), add a menu in the checkout system that allows for the special prices to be added, and modified for the different items.
 
-export { CalculatorB, CalculatorA };
+export { CalculatorB, CalculatorA, Sum, SumD };
