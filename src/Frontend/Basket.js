@@ -49,12 +49,12 @@ function Basket() {
             [productName]: (prevItems[productName] || 0) + 1,
         }));
     };
-
+    
     let BasketTotal = totalB + totalA + totalC + totalD;
 
     return (
         <div>
-            <div className={styles.total}><h2 >Total Price: {BasketTotal} pence</h2>
+            <div className={styles.total}><h2 >Total Price: £{(BasketTotal / 100).toFixed(2)}</h2>
                 <div className={styles.ScanProducts}>
                     <h3>Click to scan a product below:</h3>
                     <button onClick={handleAddItemA}>
@@ -90,12 +90,10 @@ function Basket() {
             </div>
             <div className={styles.prices}>
                 <ul>
-                    <li>
                         {totalA},
                         {totalB},
                         {totalC},
                         {totalD}
-                    </li>
                 </ul>
             </div>
         </div>

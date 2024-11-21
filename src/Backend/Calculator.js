@@ -74,7 +74,6 @@ function Sum(itemCount, unitPrice) {
     }
 }
 
-
 // future: specialprice(), add a menu in the checkout system that allows for the special prices to be added, and modified for the different items.
 
 export { CalculatorB, CalculatorA, Sum };
