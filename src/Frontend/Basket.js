@@ -72,17 +72,29 @@ function Basket() {
                 </div>
             </div>
 
-{/* Calling the Object.entries() function to convert objects to arrays to then pass them to the map() function
+            {/* Calling the Object.entries() function to convert objects to arrays to then pass them to the map() function
  to loop through the entire array created to capture 'product' and 'count' */}
 
-            <h3>Basket Items:</h3>
+            <h3 className={styles.itemsName}>Basket Items:</h3>
+            <div className={styles.productsList}>
                 <ul>
                     {Object.entries(basketItems).map(([product, count]) => (
-                        <li key={product}>
-                            {product} x{count}
+                        <li  key={product}>
+                            <h4 >{product} x{count}</h4>
                         </li>
                     ))}
                 </ul>
+            </div>
+            <div className={styles.prices}>
+                <ul>
+                    <li>
+                        {totalA},
+                        {totalB},
+                        {totalC},
+                        {totalD}
+                    </li>
+                </ul>
+            </div>
         </div>
     );
 }
