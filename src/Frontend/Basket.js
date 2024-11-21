@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { CalculatorB, CalculatorA, Sum } from '../Backend/Calculator';
 import products from './Items';
+import styles from './Styles.module.css';
 
 // Shopping basket component that tracks item count and total price when products are clicked.
 
@@ -34,25 +35,26 @@ function Basket() {
         setItemCountD(nCount);
         setTotalD(Sum(nCount, products.ProductD));
     };
-    
+
     let BasketTotal = totalB + totalA + totalC + totalD;
 
     return (
-        <div>
-            <h2>Basket Count: {BasketTotal} </h2>
-            <h3>Click to scan a product below:</h3>
-            <button onClick={handleAddItemA}>
-                Product A ({products.ProductA} pence)
-            </button>
-            <button onClick={handleAddItemB}>
-                Product B ({products.ProductB} pence)
-            </button>
-            <button onClick={handleAddItemC}>
-                Product C ({products.ProductC} pence)
-            </button>
-            <button onClick={handleAddItemD}>
-                Product D ({products.ProductD} pence)
-            </button>
+        <div className={styles.total}><h2 >Total Price: {BasketTotal} pence</h2>
+        <div className={styles.ScanProducts}> 
+                <h3>Click to scan a product below:</h3>
+                <button onClick={handleAddItemA}>
+                    Product A ({products.ProductA} pence)
+                </button>
+                <button onClick={handleAddItemB}>
+                    Product B ({products.ProductB} pence)
+                </button>
+                <button onClick={handleAddItemC}>
+                    Product C ({products.ProductC} pence)
+                </button>
+                <button onClick={handleAddItemD}>
+                    Product D ({products.ProductD} pence)
+                </button>
+            </div>
         </div>
     );
 }
