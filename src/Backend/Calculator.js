@@ -1,42 +1,6 @@
-/* 
- Special price scenarios in pence
+/*
+Pseudo code from which the below function was written:
 
- if one item scanned
-    add item price
- if three items scanned, 
-    the third one is discounted 40%
-  if one item
-    add item price
- if two items
-    the second one is discounted by 50%
-
-
- Example scenario 2
- if one item
-    add item price
- if three A items
-    discount on each item is 13.32%
- if two B items
-    discount on each item is 25%
-
- if click on button A and item A is not a multiple of 3
-        add item price associated to A
-    else if item A is a multiple of 3
-        add a 13.32% discount on each of the items.
-
-SpecialPriceA()
-click on button A, the count is added to an array
-    a loop a running in the array, when it detects more than 3 items, it does a division to 3, and saves the result
-    then it checks for the remainder of that division, if it's bigger than 0, then it adds the normal price to the amount of items in this remainder.
-SpecialPriceB()
-click on button B, the count is added to an array
-    a loop a running in the array, when it detects more than 2 items, it does a division to 2, and saves the result
-    then it checks for the remainder of that division, if it's bigger than 0, then it adds the normal price to the amount of items in this remainder.
-    division result price = price*(division result)
-    remainder result price = price*(remainder of that division)
-    then sum of division result price + remainder result price
-
-SpecialPriceB()
 click on button B, the count is added to an array
     a loop a running in the array, when it detects more than 2 items, it does a division to 2, and saves the result (special price count = 2)
     The count is then multiplied by 45 -> 2 * 45 = 90 (specialPrice)
@@ -47,3 +11,27 @@ click on button B, the count is added to an array
 
 */
 
+function Calculator(itemCount) {
+
+    const PAIR_PRICE = 45;
+    const SINGLE_PRICE = 30;
+    let TOTAL_PRICE = 0;
+
+    if (itemCount === 1) {
+        return SINGLE_PRICE;
+    }
+    else if (itemCount > 1) {
+        // Calculate number of pairs and remainder
+        const pairs = Math.floor(itemCount / 2);
+        const remainder = itemCount % 2;
+
+        // Calculate total price
+        const pairPrice = pairs * PAIR_PRICE;
+        const remainderPrice = remainder * SINGLE_PRICE;
+
+        TOTAL_PRICE = pairPrice + remainderPrice;
+    }
+    return TOTAL_PRICE;
+}
+
+export default Calculator;
