@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CalculatorB, CalculatorA, Sum,SumD } from '../Backend/Calculator';
+import { CalculatorB, CalculatorA, Sum } from '../Backend/Calculator';
 import products from './Items';
 
 // Shopping basket component that tracks item count and total price when products are clicked.
@@ -25,14 +25,14 @@ function Basket() {
     const handleAddItemC = () => {
         const nCount = itemCountC + 1;
         setItemCountC(nCount);
-        setTotalC(Sum(nCount));
+        setTotalC(Sum(nCount, products.ProductC));
     };
     const [itemCountD, setItemCountD] = useState(0);
     const [totalD, setTotalD] = useState(0);
     const handleAddItemD = () => {
         const nCount = itemCountD + 1;
         setItemCountD(nCount);
-        setTotalD(SumD(nCount));
+        setTotalD(Sum(nCount, products.ProductD));
     };
     
     let BasketTotal = totalB + totalA + totalC + totalD;

@@ -61,9 +61,11 @@ function CalculatorA(itemCount) {
     return TOTAL_PRICE;
 }
 
-function Sum(itemCount) {
+// Sum function to cater for all Standard price products.
 
-    const SINGLE_PRICE = products.ProductC;
+function Sum(itemCount, unitPrice) {
+
+    const SINGLE_PRICE = unitPrice;
     if (itemCount === 1){
         return SINGLE_PRICE;
     }
@@ -72,17 +74,7 @@ function Sum(itemCount) {
     }
 }
 
-function SumD(itemCount) {
-
-    const SINGLE_PRICE = products.ProductD;
-    if (itemCount === 1){
-        return SINGLE_PRICE;
-    }
-    else{
-        return SINGLE_PRICE * itemCount;
-    }
-}
 
 // future: specialprice(), add a menu in the checkout system that allows for the special prices to be added, and modified for the different items.
 
-export { CalculatorB, CalculatorA, Sum, SumD };
+export { CalculatorB, CalculatorA, Sum };
