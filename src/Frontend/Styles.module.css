@@ -98,3 +98,16 @@
     left: 60px;
     top: 70px;
 }
+
+.changePrices {
+    position: absolute;
+    bottom: -200px;
+    right: 0px;
+    width: 480px;
+    height: 185px;
+    background-color: white;
+    border: 3px solid #ddd;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

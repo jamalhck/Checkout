@@ -51,12 +51,21 @@ function Front({
                 </h3>
             </div>
             <div className={styles.prices}>
-                <ul>
-                    {totalA},
-                    {totalB},
-                    {totalC},
-                    {totalD}
-                </ul>
+                <h3>Running Total:</h3>
+                <h3 >A: £{(totalA / 100).toFixed(2)}</h3>
+                <h3 >B: £{(totalB / 100).toFixed(2)}</h3>
+                <h3 >C: £{(totalC / 100).toFixed(2)}</h3>
+                <h3 >D: £{(totalD / 100).toFixed(2)}</h3>
+            </div>
+            <div className={styles.changePrices}>
+                <h3>Change price</h3>
+                <label htmlFor="productSelector">Choose a product:</label>
+                <select id="productSelector" className={styles.dropdown}>
+                    <option value="Product A">Product A ({products.ProductA} pence)</option>
+                    <option value="Product B">Product B ({products.ProductB} pence)</option>
+                    <option value="Product C">Product C ({products.ProductC} pence)</option>
+                    <option value="Product D">Product D ({products.ProductD} pence)</option>
+                </select>
             </div>
         </div>
     );
