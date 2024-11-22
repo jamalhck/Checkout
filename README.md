@@ -26,7 +26,7 @@ Ideally future interations would be more suitable to perform using TypeScript, f
 Improve the styling/UI of the application.
 Add a START button before the actual checkout screen is shown.
 
-
+### Time taken to complete assessment: 12-14 hours.
 
 
 ### `npm start`
