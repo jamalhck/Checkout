@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { CalculatorB, CalculatorA, Sum } from '../Backend/Calculator';
 import products from './Items';
-import styles from './Styles.module.css';
+import Front from './Front';
+
 
 // Shopping basket component that tracks item count and total price when products are clicked.
 
@@ -46,7 +47,7 @@ function Basket() {
         setTotalD(Sum(nCount, products.ProductD));
         updateBasket('Product D')
     };
-    // Constant to add product names to the basketItems array #thinkinginreact
+
     const updateBasket = (productName) => {
         setBasketItems((prevItems) => ({
             ...prevItems,
@@ -54,54 +55,23 @@ function Basket() {
         }));
     };
     
-    let BasketTotal = totalB + totalA + totalC + totalD;
+    let basketTotal = totalB + totalA + totalC + totalD;
 
     return (
-        <div>
-            <div className={styles.total}><h2 >Total Price: £{(BasketTotal / 100).toFixed(2)}</h2>
-                <div className={styles.ScanProducts}>
-                    <h3>Click to scan a product below:</h3>
-                    <button onClick={handleAddItemA}>
-                        Product A ({products.ProductA} pence)
-                    </button>
-                    <button onClick={handleAddItemB}>
-                        Product B ({products.ProductB} pence)
-                    </button>
-                    <button onClick={handleAddItemC}>
-                        Product C ({products.ProductC} pence)
-                    </button>
-                    <button onClick={handleAddItemD}>
-                        Product D ({products.ProductD} pence)
-                    </button>
-                </div>
-            </div>
-
-            {/* Calling the Object.entries() function to convert objects to arrays to then pass them to the map() function
- to loop through the entire array created to capture 'product' and 'count' */}
-
-            <h3 className={styles.itemsName}>Basket Items:</h3>
-            <div className={styles.productsList}>
-                <h3 className={styles.quantity}>Quantity </h3>
-                <h3 className={styles.productList}>
-                    <ul>
-                        {Object.entries(basketItems).map(([product, count]) => (
-                            <li key={product}>
-                                <h4 >{product}__________________________x{count}</h4>
-                            </li>
-                        ))}
-                    </ul>
-                </h3>
-            </div>
-            <div className={styles.prices}>
-                <ul>
-                        {totalA},
-                        {totalB},
-                        {totalC},
-                        {totalD}
-                </ul>
-            </div>
-        </div>
+        <Front
+            basketTotal={basketTotal}
+            products={products}
+            basketItems={basketItems}
+            totalA={totalA}
+            totalB={totalB}
+            totalC={totalC}
+            totalD={totalD}
+            handleAddItemA={handleAddItemA}
+            handleAddItemB={handleAddItemB}
+            handleAddItemC={handleAddItemC}
+            handleAddItemD={handleAddItemD}
+        />
     );
-}
 
+}
 export default Basket;
