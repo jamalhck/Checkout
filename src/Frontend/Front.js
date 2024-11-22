@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './Styles.module.css';
 
+// Front end code and styling is applied in this file.
+
 function Front({
     basketTotal,
     products,
@@ -34,9 +36,8 @@ function Front({
                 </div>
             </div>
 
-            {/* Calling the Object.entries() function to convert objects to arrays to then pass them to the map() function
+{/* Below we can see the Object.entries() function to convert objects to arrays to then pass them to the map() function
  to loop through the entire array created to capture 'product' and 'count' */}
-
             <h3 className={styles.itemsName}>Basket Items:</h3>
             <div className={styles.productsList}>
                 <h3 className={styles.quantity}>Quantity </h3>

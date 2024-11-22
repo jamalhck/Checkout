@@ -1,10 +1,33 @@
-# Getting Started with Create React App
+# Checkout application.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Usage instructions:
 
-## Available Scripts
+Once the application is running using the below commands, we can see a simple interface with 4 buttons that mimick products being scanned when clicked on. Each button has a set price in pence that gets added to the running total of each individual item and also to the Total Price of all items.
+When the product is scanned (clicked on button) the Basket Items section gets populated with the name of the product.
+The item quantity gets updated each time an item is scanned, if the item is scanned 2 times, the quantity will be reflected as such.
+The special price is present for Product A and B, when three iteam A are scanned, the total price is £1.30. When item B is scanned two times, the total price is £0.45 instead of £0.60.
 
-In the project directory, you can run:
+## Key decisions made
+
+The way the products would be scanned, I chose button clicks to mimick a product scan.
+Decision to write pseudo code for the SpecialPrice function allowed me to visualise it before starting to type the code.
+To make the code more readable and organised, I separated the HTML code from Basket.js and put it in Front.js instead.
+To have Items.js as a file to store the Product names/ prices, this allowed for the price to be controlled from one single point for the entire application, allowing for better scalability.
+To add an extra parameter unitPrice to the Sum function in Calculator.js, helped to maintain only one function for all single price products.
+
+## Future iterations/ To add if there was more time available.
+
+For future iterations, I have thought of adding a 'change price' section next to the checkout system, which would allow for a product to be selected in a dropdown menu, then a placeholder would be activated to input the new price, and a Submit button would then be pressed to update the price inside the Items.js file, which will then feed the rest of the application with the new price.
+Another suggestion is to rectify the running total items to only be visible when the respective item is scanned and not visible as 0.00 all the time.
+The special price examples in this project are SpecialPriceA and SpecialPriceB, which in my opinion could be improved to allow for pricing rule changes specifically to bundle prices, the logic could be improved to cater for an infinite amount of items in the same bundle, with this approach we would remove one of the two SpecialPrice functions and use the one for all scenarios, 3 items or 8, 9 items, allowing scalability for the application.
+The 'change price' functionality could be improved further to add special price changes as well which would ask for the bundle item quantity and price for the entire bundle.
+Also, a functionality to remove an item from the basket.
+Ideally future interations would be more suitable to perform using TypeScript, for better error/ bug handling.
+Improve the styling/UI of the application.
+Add a START button before the actual checkout screen is shown.
+
+
+
 
 ### `npm start`
 
@@ -26,45 +49,3 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

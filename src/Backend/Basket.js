@@ -29,8 +29,6 @@ function Basket() {
         const nCount = itemCountA + 1;
         setItemCountA(nCount);
         setTotalA(SpecialPriceA(nCount));
-        // Put 'Product A' in an useState object array, and the individual price as well.
-        // Retrieve the 'Product A' and put it in placeholderA
         updateBasket('Product A');
     };
     
