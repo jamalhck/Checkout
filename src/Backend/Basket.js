@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { CalculatorB, CalculatorA, Sum } from '../Backend/Calculator';
-import products from './Items';
-import Front from './Front';
+import { CalculatorB, CalculatorA, Sum } from './Calculator';
+import products from '../Frontend/Items';
+import Front from '../Frontend/Front';
 
 
 // Shopping basket component that tracks item count and total price when products are clicked.
