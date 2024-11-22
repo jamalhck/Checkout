@@ -12,7 +12,7 @@ click on button B, the count is added to an array
 
 */
 
-function CalculatorB(itemCount) {
+function SpecialPriceB(itemCount) {
 
     const PAIR_PRICE = products.SpecialB;
     const SINGLE_PRICE = products.ProductB;
@@ -35,7 +35,7 @@ function CalculatorB(itemCount) {
     return TOTAL_PRICE;
 }
 
-function CalculatorA(itemCount) {
+function SpecialPriceA(itemCount) {
 
     const THREE_PRICE = products.SpecialA;
     const SINGLE_PRICE = products.ProductA;
@@ -76,4 +76,4 @@ function Sum(itemCount, unitPrice) {
 
 // future: specialprice(), add a menu in the checkout system that allows for the special prices to be added, and modified for the different items.
 
-export { CalculatorB, CalculatorA, Sum };
+export { SpecialPriceB, SpecialPriceA, Sum };

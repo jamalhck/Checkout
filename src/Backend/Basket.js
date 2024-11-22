@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CalculatorB, CalculatorA, Sum } from './Calculator';
+import { SpecialPriceB, SpecialPriceA, Sum } from './Calculator';
 import products from '../Frontend/Items';
 import Front from '../Frontend/Front';
 
@@ -21,14 +21,14 @@ function Basket() {
     const handleAddItemB = () => {
         const nCount = itemCountB + 1; // Increment the item count for Product B
         setItemCountB(nCount); // Update the item count state
-        setTotalB(CalculatorB(nCount)); // Calculate and update the total for Product B
+        setTotalB(SpecialPriceB(nCount)); // Calculate and update the total for Product B
         updateBasket('Product B')
     };
     
     const handleAddItemA = () => {
         const nCount = itemCountA + 1;
         setItemCountA(nCount);
-        setTotalA(CalculatorA(nCount));
+        setTotalA(SpecialPriceA(nCount));
         // Put 'Product A' in an useState object array, and the individual price as well.
         // Retrieve the 'Product A' and put it in placeholderA
         updateBasket('Product A');
